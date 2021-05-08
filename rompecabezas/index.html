@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<!-- Derechos reservados del juego-actividad: Iván Castillo & Kevin Ramos.-->
+
+<head>
+
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Old versions of Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+      /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    .column {
+      float: left;
+      /*padding: 5px;*/
+
+    }
+
+    .left {
+      /*width: 42%;*/
+      width: 50%;
+
+    }
+
+    .right {
+      /*width: 58%;*/
+      width: 50%;
+      align-self: center;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+
+
+  <title>Rompecabezas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+    /*#droppable { width: 800px; height: 600px; padding: 0.5em; float: left; margin: 10px;}*/
+    #draggable,
+    #draggable-nonvalid {
+      float: left;
+      margin: 1.9px;
+    }
+
+    .ui-widget-content {
+      border: 0;
+      background: none;
+    }
+
+    .ui-button {
+      padding: 1.2em;
+      margin-top: 16px;
+      margin-left: 255px;
+    }
+
+    .fichita {
+      width: 140px;
+      height: 120px;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .fichitaFinal {
+      width: 705px;
+      height: 643px;
+      border: 1.1px solid #083912;
+      border-radius: 4px;
+      padding: 10px;
+      background-color: #e3fde7;
+    }
+  </style>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <style type="text/css">
+    div.blueTable {
+      background-color: #EEEEEE;
+      width: 750px;
+      height: 660px;
+      padding: 20px;
+    }
+
+    .divTable.blueTable .divTableCell,
+    .divTable.blueTable .divTableHead {
+      /*border: 1px solid #AAAAAA;*/
+      /*  padding: 3px 2px;*/
+      color: rgba(0, 0, 0, 0);
+    }
+
+    .divTable {
+      display: table;
+    }
+
+    .divTableRow {
+      display: table-row;
+    }
+
+    .divTableHeading {
+      display: table-header-group;
+    }
+
+    .divTableCell,
+    .divTableHead {
+      display: table-cell;
+    }
+
+    .divTableHeading {
+      display: table-header-group;
+    }
+
+    .divTableFoot {
+      display: table-footer-group;
+    }
+
+    .divTableBody {
+      display: table-row-group;
+    }
+  </style>
+
+</head>
+
+
+<body id="cuerpo" oncontextmenu="return false">
+  <div id="contenido" class="row">
+    <div id="fichas" class="column left">
+      <div id="finalimg" style="position: absolute;"></div>
+      <div id="draggable" class="ui-widget-content" data-number="1">
+        <img src="imagenes/1_1.png" class="fichita">
+      </div>
+
+      <div id="draggable" class="ui-widget-content" data-number="2">
+        <img src="imagenes/1_2.png" class="fichita">
+      </div>
+
+      <div id="draggable" class="ui-widget-content" data-number="3">
+        <img src="imagenes/1_3.png" class="fichita">
+      </div>
+
+      <div id="draggable" class="ui-widget-content" data-number="4">
+        <img src="imagenes/1_4.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="5">
+        <img src="imagenes/1_5.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="6">
+        <img src="imagenes/2_1.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="7">
+        <img src="imagenes/2_2.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="8">
+        <img src="imagenes/2_3.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="9">
+        <img src="imagenes/2_4.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="10">
+        <img src="imagenes/2_5.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="11">
+        <img src="imagenes/3_1.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="12">
+        <img src="imagenes/3_2.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="13">
+        <img src="imagenes/3_3.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="14">
+        <img src="imagenes/3_4.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="15">
+        <img src="imagenes/3_5.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="16">
+        <img src="imagenes/4_1.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="17">
+        <img src="imagenes/4_2.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="18">
+        <img src="imagenes/4_3.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="19">
+        <img src="imagenes/4_4.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="20">
+        <img src="imagenes/4_5.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="21">
+        <img src="imagenes/5_1.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="22">
+        <img src="imagenes/5_2.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="23">
+        <img src="imagenes/5_3.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="24">
+        <img src="imagenes/5_4.png" class="fichita">
+      </div>
+      <div id="draggable" class="ui-widget-content" data-number="25">
+        <img src="imagenes/5_5.png" class="fichita">
+      </div>
+
+
+    </div>
+
+
+    <div id="panel" class="column right">
+      <div class="divTable blueTable">
+        <div class="divTableBody">
+
+          <div class="divTableRow">
+            <div class="divTableCell" data-number="1">cell1_1</div>
+            <div class="divTableCell" data-number="2">cell2_1</div>
+            <div class="divTableCell" data-number="3">cell3_1</div>
+            <div class="divTableCell" data-number="4">cell4_1</div>
+            <div class="divTableCell" data-number="5">cell5_1</div>
+          </div>
+
+          <div class="divTableRow">
+            <div class="divTableCell" data-number="6">cell1_2</div>
+            <div class="divTableCell" data-number="7">cell2_2</div>
+            <div class="divTableCell" data-number="8">cell3_2</div>
+            <div class="divTableCell" data-number="9">cell4_2</div>
+            <div class="divTableCell" data-number="10">cell5_2</div>
+          </div>
+
+          <div class="divTableRow">
+            <div class="divTableCell" data-number="11">cell1_3</div>
+            <div class="divTableCell" data-number="12">cell2_3</div>
+            <div class="divTableCell" data-number="13">cell3_3</div>
+            <div class="divTableCell" data-number="14">cell4_3</div>
+            <div class="divTableCell" data-number="15">cell5_3</div>
+          </div>
+
+          <div class="divTableRow">
+            <div class="divTableCell" data-number="16">cell1_4</div>
+            <div class="divTableCell" data-number="17">cell2_4</div>
+            <div class="divTableCell" data-number="18">cell3_4</div>
+            <div class="divTableCell" data-number="19">cell4_4</div>
+            <div class="divTableCell" data-number="20">cell5_4</div>
+          </div>
+
+          <div class="divTableRow">
+            <div class="divTableCell" data-number="21">cell1_5</div>
+            <div class="divTableCell" data-number="22">cell2_5</div>
+            <div class="divTableCell" data-number="23">cell3_5</div>
+            <div class="divTableCell" data-number="24">cell4_5</div>
+            <div class="divTableCell" data-number="25">cell5_5</div>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="ui-widget">
+        <div class="ui-state-highlight ui-corner-all"
+          style="margin-top: 20px; padding: 0 .7em; width: 750px; color: #000; text-align: center;">
+          <p id="result">Inicia el juego desplazando las fichas al tablero gris.</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <audio id="encaje" src="https://www.soundjay.com/button/button-17.mp3"></audio>
+  <audio id="afuera" src="https://www.soundjay.com/button/button-18.mp3"></audio>
+  <audio id="correct" src="https://www.soundjay.com/misc/bell-ringing-04.mp3"></audio>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    var obj = document.getElementById("encaje");
+    var afuera = document.getElementById("afuera");
+    var correct = document.getElementById("correct");
+    var arreglo = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    // var arreglo = [0,0,0,0];
+    var conteoVerifica = 0;
+    var conteoMovimientos = 0;
+    var conteoMovimientos2 = 0;
+    $(function () {
+
+
+      //Barajar fichas (Sort de divs)
+      var parent = $("#fichas");
+      var divs = parent.children();
+      while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+      }
+
+
+      //...........................................................................
+
+
+
+      $(".ui-widget-content").draggable({
+        containment: "#cuerpo",
+        stack: "#fichas div"
+        // revert: true //Controlar si retrocede
+      });
+
+
+      //...........................................................................
+
+
+      //A: Ingreso y manejo de fichas al cuerpo de tabla.   
+      $(".divTableBody").droppable({
+        accept: ".ui-widget-content",
+        // classes: {
+        //   "ui-droppable-active": "ui-state-active",
+        //   "ui-droppable-hover": "ui-state-highlight"
+        // }
+        out: function (event, ui) {
+          afuera.play();
+          conteoMovimientos2++;
+          console.log(" mov_out " + conteoMovimientos2);
+        }
+      });
+
+
+      //...........................................................................
+
+
+      //B: Manipulación en el cuerpo de tabla
+      $(".divTableCell").droppable({
+        accept: ".ui-widget-content",
+        classes: {
+          "ui-droppable-active": "ui-state-active",
+          "ui-droppable-hover": "ui-state-highlight"
+        },
+
+
+        drop: function (event, ui) {
+          var cardNumber = ui.draggable.data('number');
+          var slotNumber = $(this).data('number');
+
+          console.log(cardNumber + " - " + slotNumber);
+          //Lo ajusta en el centro de la celda
+          ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' });
+
+          conteoMovimientos++;
+          console.log(" mov " + conteoMovimientos);
+          //Relación de coordenadas o posiciones para resultado
+          if (cardNumber == slotNumber) {
+
+            arreglo[cardNumber - 1] = 1;
+            console.log("si relaciona");
+            console.log(arreglo[cardNumber - 1]);
+          }
+          else {
+            arreglo[cardNumber - 1] = 0;
+            console.log("no relaciona");
+            console.log(arreglo[cardNumber - 1]);
+          }
+
+
+          //Reporte de Fichas 
+          for (var i = 0; i <= 24; i++) {
+            conteoVerifica = conteoVerifica + arreglo[i];
+          }
+          console.log("conteoVerifica " + conteoVerifica);
+
+          //Resultado final si es correcto
+          if (conteoVerifica == 25) {
+            $('#result').text("¡Correcto! 😃 • Cantidad de Movimientos en el tablero: " + conteoMovimientos);
+            $('#finalimg').append('<img class="fichitaFinal" src="imagenes/zFinal.png"></img>');
+            $('#finalimg').append('<button class="ui-button ui-widget ui-corner-all" style="display:block;" onClick="window.location.reload();">JUEGA DE NUEVO</button>');
+
+            correct.play();
+            $(".ui-widget-content").draggable("disable");
+            $(this).droppable("disable");
+            $(".divTableBody").droppable("disable");
+
+          }
+          //Resultado final si es incorrecto
+          else {
+            $('#result').text("Incorrecto 😕 • Cantidad de Movimientos en el tablero: " + conteoMovimientos);
+          }
+
+
+          //Reproducir Sonido de Encaje
+          obj.play();
+
+          //Reset de variable de control para nueva interacción de drop
+          conteoVerifica = 0;
+
+        }
+      });
+
+
+
+    });
+  </script>
+
+</body>
+
+</html>

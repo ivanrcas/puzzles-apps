@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stop Aritmético</title>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Chewy" />
+<style>
+
+body{
+  background: rgba(242,242,242,1);
+}
+
+table{
+  margin: 0 auto;
+  background-image: url(fondo.png);
+  padding:35px;
+  box-shadow: 1px 3px 12px 4px rgba(0,0,0,0.29);
+}
+
+input{
+  font-family: 'Chewy';
+  font-size: 1.15em;
+  text-align: center;
+}
+
+thead{
+    font-family: 'Chewy';
+  font-size: 1.5em;
+   color: #062e87;
+   background-color: #fff6c7;
+}
+
+td, th {
+    border: 9px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 35 stretch;
+}
+
+.escribe{
+  margin-bottom: 15px;
+  width: 60px;
+  height: 30px;
+  border-color: green;
+  border-width: 1.5px;
+}
+
+.escribe1{
+  margin-left: 18%;
+  margin-right: 18%;
+  margin-bottom: 15px;
+  width: 60px;
+  height: 30px;
+  border-color: green;
+  border-width: 1.5px;
+}
+
+
+.puntaje{
+  display: block;
+  margin: auto;
+   width: 46px;
+  height: 30px;
+  border-radius: 5px;
+  border-color: green;
+  border-width: 1.5px;
+  color:green;
+
+}
+
+.expresion{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 15px;
+  width: 120px;
+  height: 30px;
+  border-color: green;
+  border-width: 1.5px;
+}
+
+
+
+tfoot th{
+  border:0;
+}
+
+.total{
+  border: 10px solid transparent;
+  border-image: url(border.png) 20 round;
+}
+
+.togglebtn {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    margin: 2px;
+    text-decoration: none;
+    font: bold 14px/25px Arial,sans-serif;
+    color: #19667d;
+    border: 1px solid #8af;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff6c7;
+    border: 9px solid transparent;
+    border-image: url(border.png) 35 stretch;
+    box-shadow: 1px 3px 12px 4px rgba(0,0,0,0.15);
+}
+
+.togglebtn1 {
+    right: 35%; 
+    bottom: 20px;
+    width: 45px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    font: bold 14px/25px Arial,sans-serif;
+    font-size: 30px;
+    color: #19667d;
+    border: 1px solid #8af;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff6c7;
+    border: 9px solid transparent;
+    border-image: url(border.png) 35 stretch;
+    box-shadow: 1px 3px 12px 4px rgba(0,0,0,0.15);
+}
+
+</style>
+</head>
+<body>
+<h1 align="center" style="font-family: 'Chewy';  font-size: 2.8em;margin-bottom: 20px; color: #062e87;">STOP ARITMÉTICO</h1>
+
+
+<table>
+<thead>
+<tr>
+  <th>Expresión</th>
+  <th>Números Positivos</th>
+  <th>Números Negativos</th>
+  <th>Operación <br>Aritmética</th>
+  <th>Resultado</th>
+  <th>Signo de <br>Operación</th>
+  <th>Total</th>
+</tr>
+</thead>
+  <tbody id="myTable">
+  
+  <tr id="partida" style="display: none;">
+    
+    <td>
+      <input type="text" id="fname" name="fname" class="expresion">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">      
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">      
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe1">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe1">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe1">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+  </tr>
+
+    <tr id="partida1">
+    
+    <td>
+      <input type="text" id="fname" name="fname" class="expresion">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">      
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">      
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe1">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe1">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe1">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+    <td>
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+
+  </tr>
+
+  <tfoot>
+    <tr>
+  <th style="padding: 0; border:auto;"><button type="button" class="togglebtn1" onclick="myFunction2()">+</button></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th><button type="button" class="togglebtn" onclick="window.location.reload();">Nuevo Juego</button></th>
+  <th class="total">
+    <input type="text" id="fname" name="fname" class="puntaje">
+  </th>
+</tr>
+  </tfoot>
+</table>
+<br>
+
+
+
+<script>
+// function myFunction() {
+//   var table = document.getElementById("myTable");
+//   var row = table.insertRow(-1);
+//   var cell1 = row.insertCell(0);
+//   var cell2 = row.insertCell(1);
+//   var cell3 = row.insertCell(2);
+//   var cell4 = row.insertCell(3);
+
+//   row.innerHTML = "";
+// }
+
+function myFunction2() {
+      var contar = 0;
+      var row = document.getElementById("partida"); // find row to copy
+      var table = document.getElementById("myTable"); // find table to append to
+      var clone = row.cloneNode(true); // copy children too
+      clone.id = "newID"; // change id or other attributes/contents
+      clone.style = "";
+      table.appendChild(clone); // add new row to end of table
+
+    }
+
+</script>
+
+</body>
+</html>

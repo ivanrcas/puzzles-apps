@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conoce tu nivel de afecto</title>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Chewy" />
+<style>
+
+body{
+  background: rgba(242,242,242,1);
+}
+
+table{
+  display: inline-table;
+  /*background-image: url(fondo.png);*/
+  padding:0px;
+  /*box-shadow: 1px 3px 12px 4px rgba(0,0,0,0.29);*/
+  /*margin: auto;*/
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  /*height: 300px;  Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input{
+  font-family: 'Chewy';
+  font-size: 0.9em;
+}
+
+thead{
+  font-family: 'Chewy';
+  font-size: 1.5em;
+  color: #062e87;
+  background-color: #fff6c7;
+}
+
+
+td, th {
+  border: 9px solid transparent;
+  padding: 7px;
+  border-image: url(border.png) 35 stretch;
+}
+
+.escribe{
+  /*margin-bottom: 10px;*/
+  width: 225px;
+  height: 30px;
+  border-color: green;
+  border-width: 1.5px;
+}
+
+.escribe1{
+  margin-left: 18%;
+  margin-right: 18%;
+  margin-bottom: 15px;
+  width: 60px;
+  height: 30px;
+  border-color: green;
+  border-width: 1.5px;
+}
+
+
+.puntaje{
+  margin-left: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border-color: green;
+  border-width: 1.5px;
+  color:green;
+  text-align: center;
+  bottom: 25px;
+  font-size: 1em;
+}
+
+.expresion{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 15px;
+  width: 120px;
+  height: 30px;
+  border-color: green;
+  border-width: 1.5px;
+}
+
+
+
+tfoot th{
+  border:0;
+}
+
+.total{
+  	border: 10px solid transparent;
+  	border-image: url(border.png) 20 round;
+}
+
+.togglebtn {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	margin: 2px;
+	text-decoration: none;
+	font: bold 14px/25px Arial,sans-serif;
+	color: #19667d;
+	border: 1px solid #8af;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: #fff6c7;
+	border: 9px solid transparent;
+	border-image: url(border.png) 35 stretch;
+	box-shadow: 1px 3px 12px 4px rgba(0,0,0,0.15);
+}
+
+.togglebtn1 {
+    right: 38%; 
+    bottom: 6px;
+    width: 45px;
+    height: 40px;
+    /*display: inline-block;*/
+    position: relative;
+    text-decoration: none;
+    font: bold 14px/25px Arial,sans-serif;
+    font-size: 30px;
+    color: #19667d;
+    border: 1px solid #8af;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff6c7;
+    border: 9px solid transparent;
+    border-image: url(border.png) 35 stretch;
+    box-shadow: 1px 3px 12px 4px rgba(0,0,0,0.15);
+}
+
+</style>
+</head>
+<body>
+
+<h1 align="center" style="font-family: 'Chewy'; font-size:3.2em; color: #062e87;">Conoce tu nivel de afecto</h1>
+<div class="row">
+	 <div class="column">
+	<div style="margin:auto; background-image: url(fondo.png); width: 650px; box-shadow: 1px 3px 12px 4px rgba(0,0,0,0.29); border-radius: 3.8px; padding-left: 25px;">
+<h1 align="center" style="font-family: 'Chewy';  font-size: 2.8em; margin: 0;">Familia</h1>
+
+
+<table>
+<thead>
+<tr>
+  <th>Aspectos Positivos</th>
+</tr>
+</thead>
+  <tbody id="myTable1">
+  
+  <tr id="partida1" style="display: none;">
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+  </tr>
+
+    <tr>
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+  </tr>
+
+  <tfoot>
+    <tr>
+   <th>
+   	<button type="button" class="togglebtn1" onclick="myFunction1()">+</button>
+    <input type="text" id="fname" name="fname" class="puntaje" style="float: right; clear: both; position: relative; bottom: 6px; right: 6.5px;">
+  </th>
+</tr>
+  </tfoot>
+</tbody>
+</table>
+
+
+<table>
+<thead>
+<tr>
+  <th>Aspectos Negativos</th>
+</tr>
+</thead>
+  <tbody id="myTable2">
+  
+  <tr id="partida2" style="display: none;">
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+  </tr>
+
+  <tfoot>
+    <tr>
+   <th>
+   	<button type="button" class="togglebtn1" onclick="myFunction2()">+</button>
+    <input type="text" id="fname" name="fname" class="puntaje" style="float: right; clear: both; position: relative; bottom: 6px; right: 6.5px;">
+  </th>
+</tr>
+  </tfoot>
+  </tbody>
+</table>
+</div>
+</div>
+
+ <div class="column">
+	<div style="margin:auto;background-image: url(fondo.png); width: 650px; box-shadow: 1px 3px 12px 4px rgba(0,0,0,0.29); border-radius: 3.8px; padding-left: 25px; display: inline-block;">
+<h1 align="center" style="font-family: 'Chewy';  font-size: 2.8em; margin: 0;">Amigos</h1>
+
+
+<table>
+<thead>
+<tr>
+  <th>Aspectos Positivos</th>
+</tr>
+</thead>
+  <tbody id="myTable3">
+  
+  <tr id="partida3" style="display: none;">
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+  </tr>
+
+    <tr>
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+  </tr>
+
+  <tfoot>
+    <tr>
+   <th>
+   	<button type="button" class="togglebtn1" onclick="myFunction3()">+</button>
+    <input type="text" id="fname" name="fname" class="puntaje" style="float: right; clear: both; position: relative; bottom: 6px; right: 6.5px;">
+  </th>
+</tr>
+  </tfoot>
+</tbody>
+</table>
+
+
+<table>
+<thead>
+<tr>
+  <th>Aspectos Negativos</th>
+</tr>
+</thead>
+  <tbody id="myTable4">
+  
+  <tr id="partida4" style="display: none;">
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="text" id="fname" name="fname" class="escribe">
+      <input type="text" id="fname" name="fname" class="puntaje">
+    </td>
+  </tr>
+
+  <tfoot>
+    <tr>
+   <th>
+   	<button type="button" class="togglebtn1" onclick="myFunction4()">+</button>
+    <input type="text" id="fname" name="fname" class="puntaje" style="float: right; clear: both; position: relative; bottom: 6px; right: 6.5px;">
+  </th>
+</tr>
+  </tfoot>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+<br>
+
+
+
+<script>
+// function myFunction() {
+//   var table = document.getElementById("myTable");
+//   var row = table.insertRow(-1);
+//   var cell1 = row.insertCell(0);
+//   var cell2 = row.insertCell(1);
+//   var cell3 = row.insertCell(2);
+//   var cell4 = row.insertCell(3);
+
+//   row.innerHTML = "";
+// }
+
+function myFunction1() {
+      var contar = 0;
+      var row = document.getElementById("partida1"); // find  to copy
+      var table = document.getElementById("myTable1"); // find table to append to
+      var clone = row.cloneNode(true); // copy children too
+      clone.id = "newID"; // change id or other attributes/contents
+      clone.style = "";
+      table.appendChild(clone); // add new row to end of table
+
+    }
+
+ function myFunction2() {
+      var contar = 0;
+      var row = document.getElementById("partida2"); // find  to copy
+      var table = document.getElementById("myTable2"); // find table to append to
+      var clone = row.cloneNode(true); // copy children too
+      clone.id = "newID"; // change id or other attributes/contents
+      clone.style = "";
+      table.appendChild(clone); // add new row to end of table
+    }
+
+ function myFunction3() {
+      var contar = 0;
+      var row = document.getElementById("partida3"); // find  to copy
+      var table = document.getElementById("myTable3"); // find table to append to
+      var clone = row.cloneNode(true); // copy children too
+      clone.id = "newID"; // change id or other attributes/contents
+      clone.style = "";
+      table.appendChild(clone); // add new row to end of table
+    }
+
+
+ function myFunction4() {
+      var contar = 0;
+      var row = document.getElementById("partida4"); // find  to copy
+      var table = document.getElementById("myTable4"); // find table to append to
+      var clone = row.cloneNode(true); // copy children too
+      clone.id = "newID"; // change id or other attributes/contents
+      clone.style = "";
+      table.appendChild(clone); // add new row to end of table
+    }
+
+</script>
+
+</body>
+</html>
