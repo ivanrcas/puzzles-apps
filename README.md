@@ -1,21 +1,15 @@
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
 <div align="center">
-  <h1>Titulo del proyecto</h1>
-  <img width="200px" src="logo-pre.PNG">
-  <p>Aplicaciones web que soportan el proyecto titulado: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat, enim id ultrices sollicitudin, lorem ipsum dictum massa, id vehicula tortor orci et dui. Ut fringilla nulla eu turpis mollis suscipit. Donec lorem leo, eleifend et mattis ac, cursus vitae eros. Nullam nunc odio, porta eu consectetur sed, tincidunt sit amet libero. </p>
+  <h1>Apps Web para Pedagogía de Aritmética</h1>
+  <img width="80%" src="presentacion.jpg">
+  <p>Aplicaciones web que soportan el proyecto titulado: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat, enim id ultrices sollicitudin, lorem ipsum dictum massa, id vehicula tortor orci et dui. Ut fringilla nulla eu turpis mollis suscipit.</p>
 </div>
-
 
 <div align="center">
   <a target="_blank" href="https://ivanrcas.github.io/puzzles-apps/"><strong>Ingresar a web</strong></a> |
-  <a href="#">Nexus team</a>
+  <a href="#">Desarrollador: Iván Castillo</a>
 </div>
 
-
-
 <hr />
-
 
 ## Descripción de las actividades
 ### 🧩 Rompecabezas
@@ -39,12 +33,7 @@ Se presentará al estudiante un cuadro con dos categorías (familia y amigos), l
 
 > [--> Ver demo](https://ivanrcas.github.io/puzzles-apps/recta-numerica/ "Ingresar a recta numérica")
 
-
-
 Se le plantea al estudiante una recta numérica, donde tendrá que posicionar el número entero que se le presente. Este podrá, usar la escala que quiera, la finalidad, es que este grafique correctamente lo expuesto. Se le planteará al estudiante una serie de ejercicios, los cuales deberán ser resueltos mediante el uso de la gráfica. Se busca medir la percepción del movimiento.
-
-
-
 
 ## Requerimientos
 - jQuery
@@ -52,4 +41,4 @@ Se le plantea al estudiante una recta numérica, donde tendrá que posicionar el
 - VS code 1.56.0+
 
 ## Licencia
-Este proyecto se realizó con fines académicos bajo licencia <a href="LICENSE">MIT</a>. <br>Derechos de terceros atribuidos a jQuery.
+Este proyecto se realizó con fines académicos bajo licencia <a href="LICENSE">MIT</a>. <br>Derechos de terceros atribuidos a jQuery y Kevin Ramos.
