@@ -6,7 +6,7 @@
 
 <div align="center">
   <a target="_blank" href="https://ivanrcas.github.io/puzzles-apps/"><strong>Ingresar a web</strong></a> |
-  <a href="#">Desarrollador: Iván Castillo</a>
+  <a href="https://github.com/ivanrcas/">Desarrollador: Iván Castillo</a>
 </div>
 
 <hr />
