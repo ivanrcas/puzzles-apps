@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Apps Web para Pedagogía de Aritmética</h1>
   <img width="80%" src="presentacion.jpg">
-  <p>Aplicaciones web que soportan el proyecto titulado: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat, enim id ultrices sollicitudin, lorem ipsum dictum massa, id vehicula tortor orci et dui. Ut fringilla nulla eu turpis mollis suscipit.</p>
+  <p>Aplicaciones web que soportan el aprendizaje de operaciones aritméticas. Este repositorio contiene cuatro diferentes aplicaciones web, desarrolladas con HTML5, CSS3 y jQuery. Son compatibles para pantallas de tablet y laptops.</p>
 </div>
 
 <div align="center">
